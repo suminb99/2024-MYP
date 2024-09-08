@@ -7,7 +7,7 @@ const save = document.getElementById('save');
 const font = document.getElementById('font-family');
 const textColour = document.getElementById('text-color');
 const clear = document.getElementById('clear');
-
+const strokeColour = document.getElementById('stroke-color');
 
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
     isDrawingMode: false,
@@ -15,16 +15,39 @@ const canvas = new fabric.Canvas('canvas', { // id we use in the template
     height: 500,
 });
 
-const imageURL = 'assets/images/img1.jpeg';
-canvas.setBackgroundImage(imageURL, canvas.renderAll.bind(canvas));
+const imagePath = 'assets/images/img1.jpeg';
+var img = new Image();
+img.src = imagePath;
+var width = img.width;
+var height = img.height;
 
-canvas.freeDrawingBrush.color = 'white';
+var scaleFactor = 1;
+var scaleWidth = 500 / width;
+var scaleHeight = 500 / height;
+
+scaleFactor = Math.min(scaleWidth, scaleHeight);
+
+
+canvas.setBackgroundImage(imagePath, canvas.renderAll.bind(canvas), {
+    scaleX: scaleFactor,
+    scaleY: scaleFactor,
+    originX: 'center',
+    originY: 'center',
+    left: 250,
+    top: 250
+});
+
+
+canvas.freeDrawingBrush.color = strokeColour;
 canvas.freeDrawingBrush.width = 10; 
+
+strokeColour.onchange = function() {
+    canvas.freeDrawingBrush.color = this.value;
+}
 
 // 드로잉
 draw.addEventListener('click', function() {
     console.log("free drawing activated");
-    
     canvas.isDrawingMode = !canvas.isDrawingMode;
 });
 
@@ -90,10 +113,21 @@ bubble.addEventListener('click', function() {
     console.log("image added");
 });
 
+/*
 clear.addEventListener('click', function() {
     canvas.clear();
     canvas.setBackgroundImage(imageURL, canvas.renderAll.bind(canvas));
 })
+*/
+
+clear.addEventListener('click', function() {
+    canvas.getObjects().forEach((obj) => {
+        if (obj !== canvas.setBackgroundImage) {
+            canvas.remove(obj);
+        }
+    });
+    canvas.renderAll();
+});
 
 save.addEventListener('click', function() {
     let canvasURL = canvas.toDataURL("image/png", 1);

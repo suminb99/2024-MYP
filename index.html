@@ -8,8 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-
-    <button id="draw">Draw</button>
+    <div>
+        <button id="draw">Draw</button>
+        <input type="color" id="stroke-color" value="#000000"/>
+        <label for="stroke-color">Stroke Colour</label>
+    </div>
     <div>
         <button id="text">Text</button>
         <label for="font-family">Select Font:</label>
@@ -30,9 +33,9 @@
     <button id="save">Save</button>
 
     <br><br>
-    <div>
+    <div id="wrapper">
         <canvas id="canvas"></canvas>
-        <img src="/image/bubble.png" id="bubble-image" hidden>  
+        <img src="/assets/images/bubble.png" id="bubble-image" hidden>  
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
