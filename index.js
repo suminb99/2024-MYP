@@ -15,26 +15,27 @@ const canvas = new fabric.Canvas('canvas', { // id we use in the template
     height: 500,
 });
 
-const imagePath = 'assets/images/img1.jpeg';
-var img = new Image();
-img.src = imagePath;
-var width = img.width;
-var height = img.height;
+fabric.Image.fromURL('https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img1.jpeg', function(img) {
+    const originalWidth = img.width;
+    const originalHeight = img.height;
 
-var scaleFactor = 1;
-var scaleWidth = 500 / width;
-var scaleHeight = 500 / height;
+    const scaleWidth = 500 / originalWidth;
+    const scaleHeight = 500 / originalHeight; 
 
-scaleFactor = Math.min(scaleWidth, scaleHeight);
+    const scaleFactor = Math.min(scaleWidth, scaleHeight);
 
+    img.set({
+        scaleX: scaleFactor,
+        scaleY: scaleFactor
+    });
 
-canvas.setBackgroundImage(imagePath, canvas.renderAll.bind(canvas), {
-    scaleX: scaleFactor,
-    scaleY: scaleFactor,
-    originX: 'center',
-    originY: 'center',
-    left: 250,
-    top: 250
+    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+        originX: 'center',
+        originY: 'center',
+        left: 250,
+        top: 250
+    });
+
 });
 
 
@@ -112,13 +113,6 @@ bubble.addEventListener('click', function() {
     canvas.add(image);
     console.log("image added");
 });
-
-/*
-clear.addEventListener('click', function() {
-    canvas.clear();
-    canvas.setBackgroundImage(imageURL, canvas.renderAll.bind(canvas));
-})
-*/
 
 clear.addEventListener('click', function() {
     canvas.getObjects().forEach((obj) => {

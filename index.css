@@ -4,11 +4,6 @@
 	align-items: center; /* center vertically */ 
 } 
 
-#canvas {
-    border: 1px solid #000000;
-
-}
-
 button {
     background-color: #ffffff;
     border-radius: 4px;
