@@ -9,13 +9,18 @@ const textColour = document.getElementById('text-color');
 const clear = document.getElementById('clear');
 const strokeColour = document.getElementById('stroke-color');
 
+
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
     isDrawingMode: false,
     width: 500,
     height: 500,
 });
 
-fabric.Image.fromURL('https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img1.jpeg', function(img) {
+const selectedTempNum = localStorage.getItem('selectedTemp');
+const templateURL = `https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img${selectedTempNum}.jpeg`
+
+
+fabric.Image.fromURL(templateURL, function(img) {
     const originalWidth = img.width;
     const originalHeight = img.height;
 
