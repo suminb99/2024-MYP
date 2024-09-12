@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edit.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="draw">Draw</button>
+        <input type="color" id="stroke-color" value="#000000"/>
+        <label for="stroke-color">Stroke Colour</label>
+    </div>
+    <div>
+        <button id="text">Text</button>
+        <label for="font-family">Select Font:</label>
+        <select id="font-family">
+            <option value="arial black">arial black</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="궁서체">궁서체</option>
+        </select>
+        <div>
+            <input type="color" id="text-color" value="#000000"/>
+            <label for="text-color">Text Colour</label>
+        </div>
+    </div>
+    <button id="remove">Remove</button>
+    <button id="bubble">Speech Bubble</button>
+    <button id="clear">Clear</button>
+    <button id="save">Save</button>
+
+    <br><br>
+    <div id="wrapper">
+        <canvas id="canvas"></canvas>
+        <img src="/assets/images/bubble.png" id="bubble-image" hidden>  
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+    <script src="edit.js"></script>
+</body>
+</html>

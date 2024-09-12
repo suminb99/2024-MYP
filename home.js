@@ -9,7 +9,7 @@ for (let i=1; i<6; i++) {
 
     imgElement.addEventListener('click', function() {
         localStorage.setItem('selectedTemp', i);
-        window.location.href = 'index.html';
+        window.location.href = 'edit.html';
     });
 
     memeTemplates.appendChild(imgElement);

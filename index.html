@@ -4,41 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 80vw;
+            margin: 2rem auto;
+        }
+
+        .templates {
+            columns: 4 12rem;
+            gap: 1rem;
+        }
+
+        .templates img {
+            width: 100%;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            transition: .2s ease-in-out;
+        }
+
+        .templates img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+
+    </style>
 </head>
 <body>
-    <div>
-        <button id="draw">Draw</button>
-        <input type="color" id="stroke-color" value="#000000"/>
-        <label for="stroke-color">Stroke Colour</label>
-    </div>
-    <div>
-        <button id="text">Text</button>
-        <label for="font-family">Select Font:</label>
-        <select id="font-family">
-            <option value="arial black">arial black</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Tahoma">Tahoma</option>
-            <option value="궁서체">궁서체</option>
-        </select>
-        <div>
-            <input type="color" id="text-color" value="#000000"/>
-            <label for="text-color">Text Colour</label>
+    <div class="container">
+        <div class="templates" id="meme-templates">
+            <!-- 밈 템플릿 -->
         </div>
-    </div>
-    <button id="remove">Remove</button>
-    <button id="bubble">Speech Bubble</button>
-    <button id="clear">Clear</button>
-    <button id="save">Save</button>
 
-    <br><br>
-    <div id="wrapper">
-        <canvas id="canvas"></canvas>
-        <img src="/assets/images/bubble.png" id="bubble-image" hidden>  
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
-    <script src="index.js"></script>
+    
+    <script src="home.js"></script>
 </body>
 </html>
