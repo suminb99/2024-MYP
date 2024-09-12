@@ -5,40 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="edit.css">
-    <title>Document</title>
+    <title>MYP</title>
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-    <div>
-        <button id="draw">Draw</button>
-        <input type="color" id="stroke-color" value="#000000"/>
-        <label for="stroke-color">Stroke Colour</label>
-    </div>
-    <div>
-        <button id="text">Text</button>
-        <label for="font-family">Select Font:</label>
-        <select id="font-family">
-            <option value="arial black">arial black</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Tahoma">Tahoma</option>
-            <option value="궁서체">궁서체</option>
-        </select>
-        <div>
-            <input type="color" id="text-color" value="#000000"/>
-            <label for="text-color">Text Colour</label>
-        </div>
-    </div>
-    <button id="remove">Remove</button>
-    <button id="bubble">Speech Bubble</button>
-    <button id="clear">Clear</button>
-    <button id="save">Save</button>
+    <div class="container">
+        <section class="tools-board">
+            <section class="tools-button">
+                <div class="tool">
+                    <button id="draw">
+                        <i data-feather="edit-2"></i>
+                    </button>
+                </div>
+                <div class="tool">
+                    <button id="text">
+                        <i data-feather="type"></i>
+                    </button>
+                </div>
+                <div class="tool">
+                    <button id="remove">
+                        <i data-feather="trash"></i>
+                    </button>
+                </div>
+                <div class="tool">
+                    <button id="bubble">
+                        <i data-feather="message-circle"></i>
+                    </button>
+                </div>
+                <div class="tool">
+                    <button id="clear">
+                        <i data-feather="x-circle"></i>
+                    </button>
+                </div>
+                <div class="tool">
+                    <button id="save">
+                        <i data-feather="download"></i>
+                    </button>
+                </div>
+            </section>
+            <!-- <div class = "vertical"></div> -->
+            <section class="tools-details">
+                <input type="color" id="stroke-color" value="#000000"/>
+                <label for="stroke-color">Stroke Colour</label>
 
-    <br><br>
-    <div id="wrapper">
-        <canvas id="canvas"></canvas>
-        <img src="/assets/images/bubble.png" id="bubble-image" hidden>  
+                <label for="font-family">Select Font:</label>
+                <select id="font-family">
+                    <option value="arial black">arial black</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="궁서체">궁서체</option>
+                </select>
+                <input type="color" id="text-color" value="#000000"/>
+                <label for="text-color">Text Colour</label>
+            </section>
+        </section>
+        <section class="drawing-board">
+            <canvas id="canvas"></canvas>
+            <img src="/assets/images/bubble.png" id="bubble-image" hidden>  
+        </section>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
     <script src="edit.js"></script>
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>

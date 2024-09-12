@@ -12,7 +12,7 @@ const strokeColour = document.getElementById('stroke-color');
 
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
     isDrawingMode: false,
-    width: 500,
+    width: 716,
     height: 500,
 });
 
@@ -24,7 +24,7 @@ fabric.Image.fromURL(templateURL, function(img) {
     const originalWidth = img.width;
     const originalHeight = img.height;
 
-    const scaleWidth = 500 / originalWidth;
+    const scaleWidth = 716 / originalWidth;
     const scaleHeight = 500 / originalHeight; 
 
     const scaleFactor = Math.min(scaleWidth, scaleHeight);
@@ -37,7 +37,7 @@ fabric.Image.fromURL(templateURL, function(img) {
     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
         originX: 'center',
         originY: 'center',
-        left: 250,
+        left: 358,
         top: 250
     });
 

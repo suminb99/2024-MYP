@@ -1,16 +1,42 @@
-#wrapper { 
-	display: flex; 
-	justify-content: center; /* center horizontally */ 
-	align-items: center; /* center vertically */ 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #FFF4F2;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1050px;
+}
+
+section {
+    background: #ffffff;
+    border-radius: 7px;
+}
+
+.tools-board {
+    width: 280px;
+    padding: 15px 22px 0;
+}
+
+.vertical {
+    border-left: 6px solid black;
+    height: 80%;
+    left: 50%;
+}
+ 
+.drawing-board { 
+	flex: 1;
 } 
 
 button {
     background-color: #ffffff;
-    border-radius: 4px;
-    border: 1px solid #dcdcdc;
-    font-weight: bold;
-    padding: 5px 20px;
-    cursor: pointer
+    border: 0px #dcdcdc;
 }
 
 button:hover {
