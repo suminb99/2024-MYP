@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="edit.css">
-    <title>MYP</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/feather-icons"></script>
+    <title>MYP</title>
 </head>
 <body>
     <div class="container">
@@ -57,31 +57,31 @@
                     <button id="bubble">
                         <i data-feather="message-circle"></i>
                     </button>
-                    <label for="bubble">STICKER</label>
+                    <label for="text">STICKER</label>
                 </div>
                 <div class="title">
                     <button id="remove">
                         <i data-feather="trash"></i>
                     </button>
-                    <label for="remove">DELETE</label>
+                    <label for="text">DELETE</label>
                 </div>
                 <div class="title">
                     <button id="clear">
                         <i data-feather="x-circle"></i>
                     </button>
-                    <label for="clear">CLEAR</label>
+                    <label for="text">CLEAR</label>
                 </div>
                 <div class="title">
                     <button id="download">
                         <i data-feather="download"></i>
                     </button>
-                    <label for="download">DOWNLOAD</label>
+                    <label for="text">DOWNLOAD</label>
                 </div>
             </div>
         </section>
         <section class="drawing-board">
             <canvas id="canvas"></canvas>
-            <img src="https://github.com/suminb99/2024-MYP/blob/main/assets/images/bubble.png?raw=true" id="bubble-image" hidden>
+            <img src="/assets/images/bubble.png" id="bubble-image" hidden>
         </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>

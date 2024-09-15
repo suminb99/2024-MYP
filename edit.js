@@ -3,7 +3,7 @@ const text = document.getElementById('text');
 const remove = document.getElementById('remove');
 const bubble = document.getElementById('bubble');
 const bubbleImg = document.getElementById('bubble-image');
-const save = document.getElementById('save');
+const save = document.getElementById('download');
 const font = document.getElementById('font-family');
 const textColour = document.getElementById('text-color');
 const clear = document.getElementById('clear');
@@ -12,7 +12,7 @@ const strokeColour = document.getElementById('stroke-color');
 
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
     isDrawingMode: false,
-    width: 716,
+    width: 770,
     height: 500,
 });
 
@@ -24,7 +24,7 @@ fabric.Image.fromURL(templateURL, function(img) {
     const originalWidth = img.width;
     const originalHeight = img.height;
 
-    const scaleWidth = 716 / originalWidth;
+    const scaleWidth = 770 / originalWidth;
     const scaleHeight = 500 / originalHeight; 
 
     const scaleFactor = Math.min(scaleWidth, scaleHeight);
@@ -37,7 +37,7 @@ fabric.Image.fromURL(templateURL, function(img) {
     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
         originX: 'center',
         originY: 'center',
-        left: 358,
+        left: 385,
         top: 250
     });
 
