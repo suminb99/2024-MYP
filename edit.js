@@ -12,12 +12,6 @@ const strokeWidth = document.getElementById('width-size');
 const drawLabel = document.querySelector('label[for="draw"]');
 
 
-const canvas = new fabric.Canvas('canvas', { // id we use in the template
-    isDrawingMode: false,
-    width: 770,
-    height: 510,
-});
-
 const selectedTempNum = localStorage.getItem('selectedTemp');
 // const templateURL = `https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img${selectedTempNum}.jpeg`
 const templateURL = `./assets/images/img${selectedTempNum}.jpeg`
@@ -26,22 +20,26 @@ fabric.Image.fromURL(templateURL, function(img) {
     const originalWidth = img.width;
     const originalHeight = img.height;
 
-    const scaleWidth = 770 / originalWidth;
-    const scaleHeight = 510 / originalHeight; 
+    const scaleWidth = 700 / originalWidth;
+    const scaleHeight = 500 / originalHeight; 
 
     const scaleFactor = Math.min(scaleWidth, scaleHeight);
+    const canvasWidth = originalWidth * scaleFactor;
+    const canvasHeight = originalHeight * scaleFactor;
 
-    img.set({
-        scaleX: scaleFactor,
-        scaleY: scaleFactor
+    const canvas = new fabric.Canvas('canvas', { // id we use in the template
+        isDrawingMode: false,
+        width: canvasWidth,
+        height: canvasHeight,
     });
 
     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
-        originX: 'center',
-        originY: 'center',
-        left: 385,
-        top: 255
+        scaleX: scaleFactor,
+        scaleY: scaleFactor,
+        originX: 'left',
+        originY: 'top',
     });
+
 });
 
 // 드로잉
@@ -71,7 +69,6 @@ strokeColour.onchange = function() {
 strokeWidth.onchange = function() {
     canvas.freeDrawingBrush.width = parseInt(this.value);
 }
-
 
 
 // 텍스트 추가
