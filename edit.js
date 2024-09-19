@@ -42,23 +42,7 @@ fabric.Image.fromURL(templateURL, function(img) {
         left: 385,
         top: 255
     });
-
-}, {
-    crossorigin: 'anonymous'
 });
-
-
-
-canvas.freeDrawingBrush.color = strokeColour.value;
-canvas.freeDrawingBrush.width = parseInt(strokeWidth.value, 10) || 1;
-
-strokeColour.onchange = function() {
-    canvas.freeDrawingBrush.color = this.value;
-}
-
-strokeWidth.onchange = function() {
-    canvas.freeDrawingBrush.width = this.value;
-}
 
 // 드로잉
 draw.addEventListener('click', function() {
@@ -71,7 +55,24 @@ draw.addEventListener('click', function() {
         draw.className = "active";
         drawLabel.className = "active";
     }
+
+    if (canvas.freeDrawingBrush) {
+        const brush = canvas.freeDrawingBrush;
+        brush.color = strokeColour.value;
+        brush.width = parseInt(strokeWidth.value) || 10;
+    }
 }); 
+
+strokeColour.onchange = function() {
+    console.log(strokeColour)
+    canvas.freeDrawingBrush.color = this.value;
+}
+
+strokeWidth.onchange = function() {
+    canvas.freeDrawingBrush.width = parseInt(this.value);
+}
+
+
 
 // 텍스트 추가
 text.addEventListener('click', function() {
