@@ -16,6 +16,12 @@ body {
     background-size: contain; */
 }
 
+h1 {
+    text-align: center;
+    font-size: 350%;
+    color: #89CFF0;
+}
+
 .container {
     display: flex;
     width: 100%;
@@ -51,6 +57,14 @@ section {
 .title :where(label) {
     color: #5A6168;
     padding-left: 10px;
+}
+
+.title :where(label):is(:hover) {
+    transform: scale(1.05);
+}
+
+.title :where(label):is(:hover, .active) {
+    color: #89CFF0;
 }
 
 .tool .options {
@@ -103,13 +117,22 @@ input[type="color"] {
     margin-top: 10px;
 }
 
-/* .option :where(span) {
-    color: #5A6168;
-} */
+.option :where(span) {
+    color: #000;
+}
 
 button {
+    color: #5A6168;
     background-color: #fff4fE;
     border: 0px #dcdcdc; 
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:is(:hover, .active) {
+    color: #89CFF0;
 }
 
 .drawing-board {

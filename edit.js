@@ -9,6 +9,7 @@ const textColour = document.getElementById('text-color');
 const clear = document.getElementById('clear');
 const strokeColour = document.getElementById('stroke-color');
 const strokeWidth = document.getElementById('width-size');
+const drawLabel = document.querySelector('label[for="draw"]');
 
 
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
@@ -47,6 +48,7 @@ fabric.Image.fromURL(templateURL, function(img) {
 });
 
 
+
 canvas.freeDrawingBrush.color = strokeColour.value;
 canvas.freeDrawingBrush.width = parseInt(strokeWidth.value, 10) || 1;
 
@@ -62,7 +64,14 @@ strokeWidth.onchange = function() {
 draw.addEventListener('click', function() {
     console.log("free drawing activated");
     canvas.isDrawingMode = !canvas.isDrawingMode;
-});
+    if (draw.className === "active" && drawLabel.className === "active") {
+        draw.className = "";
+        drawLabel.className = "";
+    } else {
+        draw.className = "active";
+        drawLabel.className = "active";
+    }
+}); 
 
 // 텍스트 추가
 text.addEventListener('click', function() {

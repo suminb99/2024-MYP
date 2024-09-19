@@ -9,85 +9,88 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-    <div class="container">
-        <section class="tools-board">
-            <div class="tool">
-                <div class="title">
-                    <button class="menu-button" id="draw">
-                        <i data-feather="edit-2"></i>
-                    </button>
-                    <label for="draw">DRAW</label>
+    <div class="wrapper">
+        <h1>MYP</h1>
+        <div class="container">
+            <section class="tools-board">
+                <div class="tool">
+                    <div class="title">
+                        <button id="draw">
+                            <i data-feather="edit-2"></i>
+                        </button>
+                        <label for="draw">DRAW</label>
+                    </div>
+                    <ul class="options">
+                        <li class="option">
+                            <span>width</span>
+                            <input type="range" id="width-size" max="30" min="0" value="10">
+                        </li>
+                        <li class="option">
+                            <span>colour</span>
+                            <div class="color-options">
+                                <ul class="color-option"></ul>
+                                <ul class="color-option"></ul>
+                                <ul class="color-option"></ul>
+                                <input type="color" class="color-option" id="stroke-color" value="#0000FF">
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="options">
-                    <li class="option">
-                        <span>width</span>
-                        <input type="range" id="width-size" max="30" min="0" value="10">
-                    </li>
-                    <li class="option">
-                        <span>colour</span>
-                        <div class="color-options">
-                            <ul class="color-option"></ul>
-                            <ul class="color-option"></ul>
-                            <ul class="color-option"></ul>
-                            <input type="color" class="color-option" id="stroke-color" value="#0000FF">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="tool">
-                <div class="title">
-                    <button id="text">
-                        <i data-feather="type"></i>
-                    </button>
-                    <label for="text">TEXT</label>
+                <div class="tool">
+                    <div class="title">
+                        <button id="text">
+                            <i data-feather="type"></i>
+                        </button>
+                        <label for="text">TEXT</label>
+                    </div>
+                    <ul class="options">
+                        <li class="option">
+                            <span>Font</span>
+                            <select id="font-family">
+                                <option value="arial black">arial black</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Tahoma">Tahoma</option>
+                                <option value="궁서체">궁서체</option>
+                            </select>
+                        </li>
+                        <li class="option">
+                            <span>colour</span>
+                            <input type="color" class="color-picker" id="text-color" value="#000000">
+                        </li>
+                    </ul>
                 </div>
-                <ul class="options">
-                    <li class="option">
-                        <span>Font</span>
-                        <select id="font-family">
-                            <option value="arial black">arial black</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Tahoma">Tahoma</option>
-                            <option value="궁서체">궁서체</option>
-                        </select>
-                    </li>
-                    <li class="option">
-                        <span>colour</span>
-                        <input type="color" class="color-picker" id="text-color" value="#000000">
-                    </li>
-                </ul>
-            </div>
-            <div class="tool">
-                <div class="title">
-                    <button id="bubble">
-                        <i data-feather="message-circle"></i>
-                    </button>
-                    <label for="bubble">STICKER</label>
+                <div class="tool">
+                    <div class="title">
+                        <button id="bubble">
+                            <i data-feather="message-circle"></i>
+                        </button>
+                        <label for="bubble">STICKER</label>
+                    </div>
+                    <div class="title">
+                        <button id="remove">
+                            <i data-feather="trash"></i>
+                        </button>
+                        <label for="remove">DELETE</label>
+                    </div>
+                    <div class="title">
+                        <button id="clear">
+                            <i data-feather="x-circle"></i>
+                        </button>
+                        <label for="clear">CLEAR</label>
+                    </div>
+                    <div class="title">
+                        <button id="download">
+                            <i data-feather="download"></i>
+                        </button>
+                        <label for="download">DOWNLOAD</label>
+                    </div>
                 </div>
-                <div class="title">
-                    <button id="remove">
-                        <i data-feather="trash"></i>
-                    </button>
-                    <label for="remove">DELETE</label>
-                </div>
-                <div class="title">
-                    <button id="clear">
-                        <i data-feather="x-circle"></i>
-                    </button>
-                    <label for="clear">CLEAR</label>
-                </div>
-                <div class="title">
-                    <button id="download">
-                        <i data-feather="download"></i>
-                    </button>
-                    <label for="download">DOWNLOAD</label>
-                </div>
-            </div>
-        </section>
-        <section class="drawing-board">
-            <canvas id="canvas"></canvas>
-            <img src="https://github.com/suminb99/2024-MYP/blob/main/assets/images/bubble.png?raw=true" id="bubble-image" hidden>
-        </section>
+            </section>
+            <section class="drawing-board">
+                <canvas id="canvas"></canvas>
+                <img src="https://github.com/suminb99/2024-MYP/blob/main/assets/images/bubble.png?raw=true" id="bubble-image" hidden>
+            </section>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
     <script src="edit.js"></script>
