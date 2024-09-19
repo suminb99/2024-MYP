@@ -12,9 +12,17 @@ const strokeWidth = document.getElementById('width-size');
 const drawLabel = document.querySelector('label[for="draw"]');
 
 
+const canvas = new fabric.Canvas('canvas', { // id we use in the template
+    isDrawingMode: false,
+    width: 700,
+    height: 500,
+});
+
 const selectedTempNum = localStorage.getItem('selectedTemp');
 // const templateURL = `https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img${selectedTempNum}.jpeg`
 const templateURL = `./assets/images/img${selectedTempNum}.jpeg`
+
+console.log(templateURL.width);
 
 fabric.Image.fromURL(templateURL, function(img) {
     const originalWidth = img.width;
@@ -24,20 +32,14 @@ fabric.Image.fromURL(templateURL, function(img) {
     const scaleHeight = 500 / originalHeight; 
 
     const scaleFactor = Math.min(scaleWidth, scaleHeight);
-    const canvasWidth = originalWidth * scaleFactor;
-    const canvasHeight = originalHeight * scaleFactor;
-
-    const canvas = new fabric.Canvas('canvas', { // id we use in the template
-        isDrawingMode: false,
-        width: canvasWidth,
-        height: canvasHeight,
-    });
 
     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
         scaleX: scaleFactor,
         scaleY: scaleFactor,
-        originX: 'left',
-        originY: 'top',
+        originX: 'center',
+        originY: 'center',
+        left: 700/2,
+        top: 500/2,
     });
 
 });
