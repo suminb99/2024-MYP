@@ -21,11 +21,16 @@
                 <ul class="options">
                     <li class="option">
                         <span>width</span>
-                        <input type="range" id="size-slider">
+                        <input type="range" id="width-size" max="30" min="0" value="10">
                     </li>
                     <li class="option">
                         <span>colour</span>
-                        <input type="color" class="color-picker" id="stroke-color">
+                        <div class="color-options">
+                            <ul class="color-option"></ul>
+                            <ul class="color-option"></ul>
+                            <ul class="color-option"></ul>
+                            <input type="color" class="color-option" id="stroke-color" value="#0000FF">
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -48,7 +53,7 @@
                     </li>
                     <li class="option">
                         <span>colour</span>
-                        <input type="color" class="color-picker" id="text-color">
+                        <input type="color" class="color-picker" id="text-color" value="#000000">
                     </li>
                 </ul>
             </div>

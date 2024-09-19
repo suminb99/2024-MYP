@@ -11,7 +11,9 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #FFF4F2;
+    background-color: #F0DFE9;
+    /* background-image: url(./assets/images/34101904_rm287-adj-032-a.jpg);
+    background-size: contain; */
 }
 
 .container {
@@ -20,11 +22,16 @@ body {
     gap: 10px;
     padding: 10px;
     max-width: 1050px;
+    background-color: #FFE6EE;
+    box-shadow: 0 15px 25px rgba(64, 64, 64, 0.15);
 }
 
 section {
-    background: #fff;
+    background-color: #fff4fe;
     border-radius: 7px;
+    /* border: 5px solid #B2DBE3; */
+    /* box-shadow: 0 15px 25px rgba(64, 64, 64, 0.15); */
+    /* border: 3px dotted #01B7A8; */
 }
 
 .tools-board {
@@ -48,7 +55,7 @@ section {
 
 .tool .options {
     list-style: none;
-    margin: 10px 0 0 35px;
+    margin: 10px 0 0 20px;
 }
 
 .tool .options .option {
@@ -57,12 +64,51 @@ section {
     margin-bottom: 10px;
 }
 
-.option :where(span) {
-    color: #5A6168;
+.option .color-options {
+    display: flex;
+    justify-content: space-between;
 }
 
+.option .color-options .color-option {
+    height: 20px;
+    width: 20px;
+    background: #0000FF;
+    border-radius: 30%;
+    margin-top: 3px;
+}
+
+.color-options .color-option:nth-child(1) {
+    background: #fff;
+}
+
+.color-options .color-option:nth-child(2) {
+    background: #000;
+}
+
+.color-options .color-option:nth-child(3) {
+    background: #E02020;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+}
+
+.option #width-size {
+    width: 100;
+    height: 5px;
+    margin-top: 10px;
+}
+
+/* .option :where(span) {
+    color: #5A6168;
+} */
+
 button {
-    background-color: #ffffff;
+    background-color: #fff4fE;
     border: 0px #dcdcdc; 
 }
 

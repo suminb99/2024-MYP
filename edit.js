@@ -8,24 +8,25 @@ const font = document.getElementById('font-family');
 const textColour = document.getElementById('text-color');
 const clear = document.getElementById('clear');
 const strokeColour = document.getElementById('stroke-color');
+const strokeWidth = document.getElementById('width-size');
 
 
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
     isDrawingMode: false,
     width: 770,
-    height: 500,
+    height: 510,
 });
 
 const selectedTempNum = localStorage.getItem('selectedTemp');
-const templateURL = `https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img${selectedTempNum}.jpeg`
-
+// const templateURL = `https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img${selectedTempNum}.jpeg`
+const templateURL = `./assets/images/img${selectedTempNum}.jpeg`
 
 fabric.Image.fromURL(templateURL, function(img) {
     const originalWidth = img.width;
     const originalHeight = img.height;
 
     const scaleWidth = 770 / originalWidth;
-    const scaleHeight = 500 / originalHeight; 
+    const scaleHeight = 510 / originalHeight; 
 
     const scaleFactor = Math.min(scaleWidth, scaleHeight);
 
@@ -38,17 +39,23 @@ fabric.Image.fromURL(templateURL, function(img) {
         originX: 'center',
         originY: 'center',
         left: 385,
-        top: 250
+        top: 255
     });
 
+}, {
+    crossorigin: 'anonymous'
 });
 
 
-canvas.freeDrawingBrush.color = strokeColour;
-canvas.freeDrawingBrush.width = 10; 
+canvas.freeDrawingBrush.color = strokeColour.value;
+canvas.freeDrawingBrush.width = parseInt(strokeWidth.value, 10) || 1;
 
 strokeColour.onchange = function() {
     canvas.freeDrawingBrush.color = this.value;
+}
+
+strokeWidth.onchange = function() {
+    canvas.freeDrawingBrush.width = this.value;
 }
 
 // 드로잉
