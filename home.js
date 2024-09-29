@@ -1,17 +1,19 @@
 const memeTemplates = document.getElementById('meme-templates');
+import memeImages from './images.js';
 
-for (let i=1; i<17; i++) {
+memeImages.forEach(function(meme) {
+    console.log(typeof(meme));
+    const imageId = meme['img'];
     const imgElement = document.createElement('img');
-    // imgElement.src = `https://raw.githubusercontent.com/suminb99/2024-MYP/main/assets/images/img${i}.jpeg`;
-    imgElement.src = `./assets/images/img${i}.jpeg`
-    imgElement.alt = `Meme Template ${i}`;
-    
+    imgElement.src = `./assets/images/img${imageId}.jpeg`
+    imgElement.alt = `Meme Template ${imageId}`;
+
     imgElement.classList.add('meme-template')
 
     imgElement.addEventListener('click', function() {
-        localStorage.setItem('selectedTemp', i);
+        localStorage.setItem('templateInfo', JSON.stringify(meme));
         window.location.href = 'edit.html';
     });
 
     memeTemplates.appendChild(imgElement);
-}
+})
