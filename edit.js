@@ -45,6 +45,7 @@ fabric.Image.fromURL(templateURL, function (img) {
 iconBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         btn.classList.toggle("active");
+        console.log(btn);
     })
 })
 
@@ -110,6 +111,7 @@ text.addEventListener('click', function () {
 // 텍스트 색상 변경
 textColorBtns.forEach(btn => {
     btn.addEventListener("click", () => {
+        console.log("text clicked")
         document.querySelector(".text-color-options .selected").classList.remove("selected");
         btn.classList.add("selected");
         selectedTextColor = window.getComputedStyle(btn).getPropertyValue("background-color");
