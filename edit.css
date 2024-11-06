@@ -44,22 +44,27 @@ section {
     margin-bottom: 20px;
 }
 
-.tool .title {
+.title > * {
+    color: #a0978d;
+}
+
+.title:hover > * {
+    transform: scale(1.1);
+    color: #89CFF0;
+}
+
+.title.active > * {
+    color: #89CFF0;
+}
+
+.title {
     display: flex;
     margin-bottom: 10px;
 }
 
-.title :where(label) {
-    color: #5A6168;
+.title .label {
     padding-left: 10px;
-}
-
-.title :where(label):is(:hover) {
-    transform: scale(1.05);
-}
-
-.title :where(label):is(:hover, .active) {
-    color: #89CFF0;
+    padding-top: 2px;
 }
 
 .tool .options {
@@ -78,49 +83,121 @@ section {
     justify-content: space-between;
 }
 
-.option .color-options .color-option {
-    height: 20px;
-    width: 20px;
-    border-radius: 30%;
-    margin-top: 3px;
-}
-
-.color-options .color-option:nth-child(1) {
-    background-color: #fff000;
-}
-
-.color-options .color-option:nth-child(2) {
-    background-color: #000000;
-}
-
-.color-options .color-option:nth-child(3) {
-    background-color: #ff0000;
-}
-
-.color-options .color-option:nth-child(4) {
-    background-color: #00ffff;
-}
-
-.color-options .color-option:nth-child(5) {
-    background-color: #f6b4c3;
-}
-
 input[type="color"] {
     opacity: 0;
 }
 
-#color-picker-wrapper {
+.option .color-options .color-option {
     border-radius: 30%;
     margin-top: 3px;
     width: 20px;
     height: 20px;
-    background-color: #0000FF;
+    position: relative;
 }
 
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.option .color-options .color-option.selected::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+}
+
+.color-options .color-option:nth-child(1) {
+    background-color: #ffb3ba;
+}
+
+.color-options .color-option:nth-child(2) {
+    background-color: #ffdfba;
+}
+
+.color-options .color-option:nth-child(3) {
+    background-color: #ffffba;
+}
+
+.color-options .color-option:nth-child(4) {
+    background-color: #baffc9;
+}
+
+.color-options .color-option:nth-child(5) {
+    background-color: #bae1ff;
+}
+
+.color-options .color-option:nth-child(6) {
+    background-color: #afeeee;
+}
+
+/* 텍스트 색상 버튼 스타일링 */
+
+.option .text-color-options { /*중복*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.option .text-color-options .text-color-option {
+    border-radius: 30%;
+    margin-top: 3px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.text-color-option:hover {
+    transform: scale(1.1);
+}
+
+.option .text-color-options .text-color-option.selected::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+}
+
+.text-color-options .text-color-option:nth-child(1) {
+    background-color: #000000;
+}
+
+.text-color-options .text-color-option:nth-child(2) {
+    background-color: #ff3333;
+}
+
+.text-color-options .text-color-option:nth-child(3) {
+    background-color: #ffa500;
+}
+
+.text-color-options .text-color-option:nth-child(4) {
+    background-color: #f0e68c;
+}
+
+.text-color-options .text-color-option:nth-child(5) {
+    background-color: #49be2c ;
+}
+
+.text-color-options .text-color-option:nth-child(6) {
+    background-color: #981ade;
+}
+
+/* brush stroke range slider */
 .option #width-size {
-    width: 100;
     height: 5px;
     margin-top: 10px;
+    accent-color: #ffc0cb;
+    border-radius: 10px;
 }
 
 .option :where(span) {
@@ -128,17 +205,8 @@ input[type="color"] {
 }
 
 button {
-    color: #5A6168;
     background-color: #fff4fE;
     border: 0px #dcdcdc; 
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-button:is(:hover, .active) {
-    color: #89CFF0;
 }
 
 .drawing-board {

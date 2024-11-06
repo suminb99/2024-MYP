@@ -20,7 +20,7 @@
                         <button id="draw">
                             <i data-feather="edit-2"></i>
                         </button>
-                        <label for="draw">DRAW</label>
+                        <span class="label">DRAW</span>
                     </div>
                     <ul class="options">
                         <li class="option">
@@ -30,13 +30,13 @@
                         <li class="option">
                             <span>colour</span>
                             <div class="color-options">
-                                <ul class="color-option" value="#fff000"></ul>
+                                <ul class="color-option selected"></ul>
                                 <ul class="color-option"></ul>
                                 <ul class="color-option"></ul>
                                 <ul class="color-option"></ul>
                                 <ul class="color-option"></ul>
-                                <div id="color-picker-wrapper">
-                                    <input type="color" class="color-picker" id="stroke-color" value="#0000FF">
+                                <div class="color-option">
+                                    <input type="color" id="stroke-color-picker" value="#afeeee">
                                 </div>
                             </div>
                         </li>
@@ -47,7 +47,7 @@
                         <button id="text">
                             <i data-feather="type"></i>
                         </button>
-                        <label for="text">TEXT</label>
+                        <span class="label">TEXT</span>
                     </div>
                     <ul class="options">
                         <li class="option">
@@ -61,7 +61,16 @@
                         </li>
                         <li class="option">
                             <span>colour</span>
-                            <input type="color" class="color-picker" id="text-color" value="#000000">
+                            <div class="text-color-options">
+                                <ul class="text-color-option selected"></ul>
+                                <ul class="text-color-option"></ul>
+                                <ul class="text-color-option"></ul>
+                                <ul class="text-color-option"></ul>
+                                <ul class="text-color-option"></ul>
+                                <div class="text-color-option">
+                                    <input type="color" id="text-color-picker" value="#afeeee">
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -70,25 +79,25 @@
                         <button id="bubble">
                             <i data-feather="message-circle"></i>
                         </button>
-                        <label for="bubble">STICKER</label>
+                        <span class="label">STICKER</span>
                     </div>
                     <div class="title">
                         <button id="remove">
                             <i data-feather="trash"></i>
                         </button>
-                        <label for="remove">DELETE</label>
+                        <span class="label">DELETE</span>
                     </div>
                     <div class="title">
                         <button id="clear">
                             <i data-feather="x-circle"></i>
                         </button>
-                        <label for="clear">CLEAR</label>
+                        <span class="label">CLEAR</span>
                     </div>
                     <div class="title">
                         <button id="download">
                             <i data-feather="download"></i>
                         </button>
-                        <label for="download">DOWNLOAD</label>
+                        <span class="label">DOWNLOAD</span>
                     </div>
                 </div>
             </section>

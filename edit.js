@@ -5,15 +5,17 @@ const bubble = document.getElementById('bubble');
 const bubbleImg = document.getElementById('bubble-image');
 const save = document.getElementById('download');
 const font = document.getElementById('font-family');
-const textColour = document.getElementById('text-color');
 const clear = document.getElementById('clear');
-const strokeColour = document.getElementById('stroke-color');
 const strokeWidth = document.getElementById('width-size');
-const drawLabel = document.querySelector('label[for="draw"]');
+const iconBtns = document.querySelectorAll('.title');
 const canvasContainer = document.getElementById('canvas-wrapper');
-const colorPickerWrapper = document.getElementById("color-picker-wrapper");
+const colorBtns = document.querySelectorAll('.color-option');
+const strokeColorPicker = document.getElementById("stroke-color-picker");
+const selectedColorBtn = document.querySelector('.color-options .selected');
 
-
+const textColorBtns = document.querySelectorAll('.text-color-option');
+const textColorPicker = document.getElementById("text-color-picker");
+const selectedTextColorBtn = document.querySelector('.text-color-options .selected');
 
 
 const templateInfo = JSON.parse(localStorage.getItem('templateInfo'));
@@ -40,30 +42,45 @@ fabric.Image.fromURL(templateURL, function (img) {
     });
 });
 
-// 드로잉
+iconBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+    })
+})
+
+// 초기 브러쉬 색상
+let selectedColor = window.getComputedStyle(selectedColorBtn).getPropertyValue("background-color");
+// 초기 텍스트 색상
+let selectedTextColor = window.getComputedStyle(selectedTextColorBtn).getPropertyValue("background-color");
+
+// 드로잉 섹션
 draw.addEventListener('click', function () {
     console.log("free drawing activated");
     canvas.isDrawingMode = !canvas.isDrawingMode;
-    if (draw.className === "active" && drawLabel.className === "active") {
-        draw.className = "";
-        drawLabel.className = "";
-    } else {
-        draw.className = "active";
-        drawLabel.className = "active";
-    }
 
     if (canvas.freeDrawingBrush) {
         const brush = canvas.freeDrawingBrush;
-        brush.color = strokeColour.value;
+        brush.color = selectedColor;
         brush.width = parseInt(strokeWidth.value) || 10;
     }
 });
 
-strokeColour.onchange = function () {
-    console.log("colour changed");
-    colorPickerWrapper.style.backgroundColor = strokeColour.value;
-    canvas.freeDrawingBrush.color = this.value;
-}
+// 브러쉬 색상 변경
+colorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector(".color-options .selected").classList.remove("selected");
+        btn.classList.add("selected");
+        selectedColor = window.getComputedStyle(btn).getPropertyValue("background-color");
+        canvas.freeDrawingBrush.color = selectedColor;
+        console.log(btn);
+    })
+});
+
+// color picker의 버튼 색상 변경 및 변경 색상 적용
+strokeColorPicker.addEventListener("change", () => {
+    strokeColorPicker.parentElement.style.background = strokeColorPicker.value;
+    strokeColorPicker.parentElement.click();
+})
 
 strokeWidth.onchange = function () {
     canvas.freeDrawingBrush.width = parseInt(this.value);
@@ -78,7 +95,7 @@ text.addEventListener('click', function () {
         top: 40,
         objecttype: 'text',
         fontFamily: font.value,
-        fill: textColour.value
+        fill: selectedTextColor
     });
     canvas.add(textBox).setActiveObject(textBox);
 
@@ -88,14 +105,26 @@ text.addEventListener('click', function () {
         canvas.getActiveObject().set("fontFamily", newFont);
         canvas.requestRenderAll();
     }
-
-    // 색상 바꾸기
-    textColour.onchange = function () {
-        newColour = this.value;
-        canvas.getActiveObject().set("fill", newColour);
-        canvas.requestRenderAll();
-    }
 });
+
+// 텍스트 색상 변경
+textColorBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector(".text-color-options .selected").classList.remove("selected");
+        btn.classList.add("selected");
+        selectedTextColor = window.getComputedStyle(btn).getPropertyValue("background-color");
+
+        canvas.getActiveObject().set("fill", selectedTextColor);
+        canvas.requestRenderAll();
+        console.log(btn);
+    })
+});
+
+// 텍스트 color-picker 버튼 색상 맞춰서 변경
+textColorPicker.addEventListener("change", () => {
+    textColorPicker.parentElement.style.background = textColorPicker.value;
+    textColorPicker.parentElement.click();
+})
 
 
 // 지우기
