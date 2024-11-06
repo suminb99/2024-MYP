@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <title>MYP</title>
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
     <div class="wrapper">
         <h1>MYP</h1>
@@ -28,10 +30,14 @@
                         <li class="option">
                             <span>colour</span>
                             <div class="color-options">
+                                <ul class="color-option" value="#fff000"></ul>
                                 <ul class="color-option"></ul>
                                 <ul class="color-option"></ul>
                                 <ul class="color-option"></ul>
-                                <input type="color" class="color-option" id="stroke-color" value="#0000FF">
+                                <ul class="color-option"></ul>
+                                <div id="color-picker-wrapper">
+                                    <input type="color" class="color-picker" id="stroke-color" value="#0000FF">
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -88,7 +94,8 @@
             </section>
             <section class="drawing-board" id="canvas-wrapper">
                 <canvas id="canvas"></canvas>
-                <img src="https://github.com/suminb99/2024-MYP/blob/main/assets/images/bubble.png?raw=true" id="bubble-image" hidden>
+                <img src="https://github.com/suminb99/2024-MYP/blob/main/assets/images/bubble.png?raw=true"
+                    id="bubble-image" hidden>
             </section>
         </div>
     </div>
@@ -98,4 +105,5 @@
         feather.replace();
     </script>
 </body>
+
 </html>

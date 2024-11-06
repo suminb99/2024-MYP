@@ -11,12 +11,16 @@ const strokeColour = document.getElementById('stroke-color');
 const strokeWidth = document.getElementById('width-size');
 const drawLabel = document.querySelector('label[for="draw"]');
 const canvasContainer = document.getElementById('canvas-wrapper');
+const colorPickerWrapper = document.getElementById("color-picker-wrapper");
+
+
+
 
 const templateInfo = JSON.parse(localStorage.getItem('templateInfo'));
 console.log(templateInfo);
 const imgId = templateInfo['img'];
 const scaleWidth = 700 / templateInfo['width'];
-const scaleHeight = 500 / templateInfo['height']; 
+const scaleHeight = 500 / templateInfo['height'];
 const scaleFactor = Math.min(scaleWidth, scaleHeight);
 
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
@@ -27,7 +31,7 @@ const canvas = new fabric.Canvas('canvas', { // id we use in the template
 
 const templateURL = `./assets/images/img${imgId}.jpeg`
 
-fabric.Image.fromURL(templateURL, function(img) {
+fabric.Image.fromURL(templateURL, function (img) {
     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
         scaleX: scaleFactor,
         scaleY: scaleFactor,
@@ -37,7 +41,7 @@ fabric.Image.fromURL(templateURL, function(img) {
 });
 
 // 드로잉
-draw.addEventListener('click', function() {
+draw.addEventListener('click', function () {
     console.log("free drawing activated");
     canvas.isDrawingMode = !canvas.isDrawingMode;
     if (draw.className === "active" && drawLabel.className === "active") {
@@ -53,20 +57,21 @@ draw.addEventListener('click', function() {
         brush.color = strokeColour.value;
         brush.width = parseInt(strokeWidth.value) || 10;
     }
-}); 
+});
 
-strokeColour.onchange = function() {
-    console.log(strokeColour)
+strokeColour.onchange = function () {
+    console.log("colour changed");
+    colorPickerWrapper.style.backgroundColor = strokeColour.value;
     canvas.freeDrawingBrush.color = this.value;
 }
 
-strokeWidth.onchange = function() {
+strokeWidth.onchange = function () {
     canvas.freeDrawingBrush.width = parseInt(this.value);
 }
 
 
 // 텍스트 추가
-text.addEventListener('click', function() {
+text.addEventListener('click', function () {
     canvas.isDrawingMode = false;
     const textBox = new fabric.IText('Text', {
         left: 40,
@@ -78,14 +83,14 @@ text.addEventListener('click', function() {
     canvas.add(textBox).setActiveObject(textBox);
 
     // 글꼴 바꾸기
-    font.onchange = function() {
+    font.onchange = function () {
         newFont = this.value;
         canvas.getActiveObject().set("fontFamily", newFont);
         canvas.requestRenderAll();
     }
 
     // 색상 바꾸기
-    textColour.onchange = function() {
+    textColour.onchange = function () {
         newColour = this.value;
         canvas.getActiveObject().set("fill", newColour);
         canvas.requestRenderAll();
@@ -109,14 +114,14 @@ canvas.on('selection:cleared', function() {
 });
 */
 
-remove.addEventListener('click', function() {
+remove.addEventListener('click', function () {
     canvas.getActiveObjects().forEach((obj) => {
         canvas.remove(obj);
     });
     canvas.discardActiveObject().renderAll();
 });
 
-bubble.addEventListener('click', function() {
+bubble.addEventListener('click', function () {
     let image = new fabric.Image(bubbleImg, {
         left: 100,
         top: 100,
@@ -127,7 +132,7 @@ bubble.addEventListener('click', function() {
     console.log("image added");
 });
 
-clear.addEventListener('click', function() {
+clear.addEventListener('click', function () {
     canvas.getObjects().forEach((obj) => {
         if (obj !== canvas.setBackgroundImage) {
             canvas.remove(obj);
@@ -136,7 +141,7 @@ clear.addEventListener('click', function() {
     canvas.renderAll();
 });
 
-save.addEventListener('click', function() {
+save.addEventListener('click', function () {
     let canvasURL = canvas.toDataURL("image/png", 1);
     console.log(canvasURL);
     const createEl = document.createElement('a');
