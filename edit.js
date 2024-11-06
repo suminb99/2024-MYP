@@ -7,7 +7,6 @@ const save = document.getElementById('download');
 const font = document.getElementById('font-family');
 const clear = document.getElementById('clear');
 const strokeWidth = document.getElementById('width-size');
-const iconBtns = document.querySelectorAll('.title');
 const canvasContainer = document.getElementById('canvas-wrapper');
 const colorBtns = document.querySelectorAll('.color-option');
 const strokeColorPicker = document.getElementById("stroke-color-picker");
@@ -42,13 +41,6 @@ fabric.Image.fromURL(templateURL, function (img) {
     });
 });
 
-iconBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        btn.classList.toggle("active");
-        console.log(btn);
-    })
-})
-
 // 초기 브러쉬 색상
 let selectedColor = window.getComputedStyle(selectedColorBtn).getPropertyValue("background-color");
 // 초기 텍스트 색상
@@ -57,6 +49,7 @@ let selectedTextColor = window.getComputedStyle(selectedTextColorBtn).getPropert
 // 드로잉 섹션
 draw.addEventListener('click', function () {
     console.log("free drawing activated");
+    draw.classList.toggle("active");
     canvas.isDrawingMode = !canvas.isDrawingMode;
 
     if (canvas.freeDrawingBrush) {

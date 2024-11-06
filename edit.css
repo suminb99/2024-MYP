@@ -42,6 +42,7 @@ section {
 
 .tools-board .tool {
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .title > * {
