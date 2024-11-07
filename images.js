@@ -95,6 +95,72 @@ const memeImages = [
         height: 736,
         class: 'dog',
     },
+    {
+        img: '17',
+        width: 675,
+        height: 1200,
+        class: 'etc',
+    },
+    {
+        img: '18',
+        width: 500,
+        height: 476,
+        class: 'dog',
+    },
+    {
+        img: '19',
+        width: 735,
+        height: 726,
+        class: 'cat',
+    },
+    {
+        img: '20',
+        width: 736,
+        height: 982,
+        class: 'cat',
+    },
+    {
+        img: '21',
+        width: 736,
+        height: 736,
+        class: 'dog',
+    },
+    {
+        img: '22',
+        width: 700,
+        height: 700,
+        class: 'dog',
+    },
+    {
+        img: '23',
+        width: 736,
+        height: 840,
+        class: 'dog',
+    },
+    {
+        img: '24',
+        width: 375,
+        height: 500,
+        class: 'etc',
+    },
+    {
+        img: '25',
+        width: 720,
+        height: 593,
+        class: 'dog',
+    },
+    {
+        img: '26',
+        width: 601,
+        height: 937,
+        class: 'etc',
+    },
+    {
+        img: '27',
+        width: 550,
+        height: 528,
+        class: 'dog',
+    },
 ];
 
 export default memeImages;
