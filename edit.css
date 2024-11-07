@@ -79,6 +79,10 @@ section {
     margin-bottom: 10px;
 }
 
+.option span {
+    color: #575048;
+}
+
 .option .color-options {
     display: flex;
     justify-content: space-between;

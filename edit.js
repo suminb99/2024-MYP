@@ -48,6 +48,7 @@ let selectedTextColor = window.getComputedStyle(selectedTextColorBtn).getPropert
 
 // 드로잉 섹션
 draw.addEventListener('click', function () {
+    // 드로잉 모드 toggle
     console.log("free drawing activated");
     draw.classList.toggle("active");
     canvas.isDrawingMode = !canvas.isDrawingMode;
@@ -81,9 +82,9 @@ strokeWidth.onchange = function () {
 }
 
 
-// 텍스트 추가
+// 텍스트 섹션
 text.addEventListener('click', function () {
-    canvas.isDrawingMode = false;
+    deactivateDrawingMode();
     const textBox = new fabric.IText('Text', {
         left: 40,
         top: 40,
@@ -121,31 +122,18 @@ textColorPicker.addEventListener("change", () => {
     textColorPicker.parentElement.click();
 })
 
-
-// 지우기
-/*
-remove.addEventListener('click', function() {
-    canvas.isDrawingMode = false;
-    canvas.remove(canvas.getActiveObject());
-});
-
-canvas.on('selection:created', function() {
-    remove.removeAttribute('disabled');
-});
-
-canvas.on('selection:cleared', function() {
-    remove.setAttribute('disabled', 'disabled');
-});
-*/
-
+// 부분 삭제
 remove.addEventListener('click', function () {
+    deactivateDrawingMode();
     canvas.getActiveObjects().forEach((obj) => {
         canvas.remove(obj);
     });
     canvas.discardActiveObject().renderAll();
 });
 
+// 말풍선 추가
 bubble.addEventListener('click', function () {
+    deactivateDrawingMode();
     let image = new fabric.Image(bubbleImg, {
         left: 100,
         top: 100,
@@ -156,7 +144,9 @@ bubble.addEventListener('click', function () {
     console.log("image added");
 });
 
+// 전체 삭제
 clear.addEventListener('click', function () {
+    deactivateDrawingMode();
     canvas.getObjects().forEach((obj) => {
         if (obj !== canvas.setBackgroundImage) {
             canvas.remove(obj);
@@ -165,7 +155,9 @@ clear.addEventListener('click', function () {
     canvas.renderAll();
 });
 
+// 밈 저장
 save.addEventListener('click', function () {
+    deactivateDrawingMode();
     let canvasURL = canvas.toDataURL("image/png", 1);
     console.log(canvasURL);
     const createEl = document.createElement('a');
@@ -176,3 +168,11 @@ save.addEventListener('click', function () {
     createEl.click();
     createEl.remove();
 });
+
+// 드로잉 모드 해제
+function deactivateDrawingMode() {
+    if (canvas.isDrawingMode) {
+        draw.classList.toggle("active");
+        canvas.isDrawingMode = false;
+    }
+}
