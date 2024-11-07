@@ -217,3 +217,40 @@ button {
 .drawing-board {
     flex: 1;
 }
+
+
+/* mobile  */
+@media screen and (max-width: 576px) {
+    .container {
+        display: block;
+        background-color: #F0DFE9;
+    }
+
+    .tools-board {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 1.5rem;
+        border-radius: 55px;
+    }
+
+    .tools-board .tool {
+        margin: 0;
+        display: table-cell;
+    }
+
+    .tools-board .tool .title {
+        display: table-cell;
+        padding-left: 0.75rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .tools-board .tool .title .label {
+        display: none;
+    }
+
+    .tools-board .tool .options {
+        display: none;
+    }
+    
+}

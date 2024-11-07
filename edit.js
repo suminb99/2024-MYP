@@ -16,12 +16,18 @@ const textColorBtns = document.querySelectorAll('.text-color-option');
 const textColorPicker = document.getElementById("text-color-picker");
 const selectedTextColorBtn = document.querySelector('.text-color-options .selected');
 
+let canvasScreenWidth = 700, canvasScreenHeight = 500;
+console.log(innerWidth);
+if (innerWidth < 576) {
+    canvasScreenWidth = 350;
+    canvasScreenHeight = 500;
+}
 
 const templateInfo = JSON.parse(localStorage.getItem('templateInfo'));
 console.log(templateInfo);
 const imgId = templateInfo['img'];
-const scaleWidth = 700 / templateInfo['width'];
-const scaleHeight = 500 / templateInfo['height'];
+const scaleWidth = canvasScreenWidth / templateInfo['width'];
+const scaleHeight = canvasScreenHeight / templateInfo['height'];
 const scaleFactor = Math.min(scaleWidth, scaleHeight);
 
 const canvas = new fabric.Canvas('canvas', { // id we use in the template
