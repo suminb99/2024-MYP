@@ -227,22 +227,24 @@ button {
     }
 
     .tools-board {
-        width: 80%;
-        margin-right: auto;
-        margin-left: auto;
+        width: 100%;
         margin-bottom: 1.5rem;
         border-radius: 55px;
+        justify-content:center;
+        display: flex;
+        padding-left: 0;
     }
 
     .tools-board .tool {
         margin: 0;
-        display: table-cell;
+        /* display: table-cell; */
+        display: flex;
     }
 
     .tools-board .tool .title {
-        display: table-cell;
-        padding-left: 0.75rem;
-        padding-bottom: 0.4rem;
+        /* display: table-cell; */
+        padding-left: 1.7rem;
+        padding-bottom: 0.25rem;
     }
 
     .tools-board .tool .title .label {

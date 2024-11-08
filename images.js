@@ -121,14 +121,8 @@ const memeImages = [
     },
     {
         img: '21',
-        width: 736,
-        height: 736,
-        class: 'dog',
-    },
-    {
-        img: '22',
-        width: 620,
-        height: 620,
+        width: 700,
+        height: 700,
         class: 'dog',
     },
     {
