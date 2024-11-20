@@ -289,7 +289,7 @@ button {
   }
 
   .tools-board .tool:nth-child(2) .options {
-    left: -126%;
+    left: -115%;
   }
 
   .tools-board .tool .title.active + .options {
