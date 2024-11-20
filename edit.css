@@ -1,258 +1,309 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.kirang-haerang-regular {
+  font-family: "Kirang Haerang", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nanum-pen-script-regular {
+  font-family: "Nanum Pen Script", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #F0DFE9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0dfe9;
 }
 
 h1 {
-    text-align: center;
-    font-size: 350%;
-    color: #89CFF0;
+  text-align: center;
+  font-size: 350%;
+  color: #89cff0;
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    padding: 10px;
-    max-width: 1050px;
-    background-color: #FFE6EE;
-    box-shadow: 0 15px 25px rgba(64, 64, 64, 0.15);
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  max-width: 1050px;
+  background-color: #ffe6ee;
+  box-shadow: 0 15px 25px rgba(64, 64, 64, 0.15);
 }
 
 section {
-    background-color: #fff4fe;
-    border-radius: 7px;
+  background-color: #fff4fe;
+  border-radius: 7px;
 }
 
 .tools-board {
-    width: 250px;
-    padding: 15px 22px 0;
+  width: 250px;
+  padding: 15px 22px 0;
 }
 
 .tools-board .tool {
-    margin-bottom: 20px;
-    cursor: pointer;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .title > * {
-    color: #a0978d;
+  color: #a0978d;
 }
 
 .title:hover > * {
-    transform: scale(1.1);
-    color: #89CFF0;
+  transform: scale(1.1);
+  color: #89cff0;
 }
 
 .title.active > * {
-    color: #89CFF0;
+  color: #89cff0;
 }
 
 .title {
-    display: flex;
-    margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .title .label {
-    padding-left: 10px;
-    padding-top: 2px;
+  padding-left: 10px;
+  padding-top: 2px;
 }
 
 .tool .options {
-    list-style: none;
-    margin: 10px 0 0 20px;
+  list-style: none;
+  margin: 10px 0 0 20px;
 }
 
 .tool .options .option {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .option span {
-    color: #575048;
+  color: #575048;
 }
 
 .option .color-options {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 input[type="color"] {
-    opacity: 0;
+  opacity: 0;
 }
 
 .option .color-options .color-option {
-    border-radius: 30%;
-    margin-top: 3px;
-    width: 20px;
-    height: 20px;
-    position: relative;
+  border-radius: 30%;
+  margin-top: 3px;
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 
 .color-option:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .option .color-options .color-option.selected::before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    height: 12px;
-    width: 12px;
-    background: inherit;
-    border-radius: inherit;
-    border: 2px solid #fff;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
 }
 
 .color-options .color-option:nth-child(1) {
-    background-color: #ffb3ba;
+  background-color: #ffb3ba;
 }
 
 .color-options .color-option:nth-child(2) {
-    background-color: #ffdfba;
+  background-color: #ffdfba;
 }
 
 .color-options .color-option:nth-child(3) {
-    background-color: #ffffba;
+  background-color: #ffffba;
 }
 
 .color-options .color-option:nth-child(4) {
-    background-color: #baffc9;
+  background-color: #baffc9;
 }
 
 .color-options .color-option:nth-child(5) {
-    background-color: #bae1ff;
+  background-color: #bae1ff;
 }
 
 .color-options .color-option:nth-child(6) {
-    background-color: #afeeee;
+  background-color: #afeeee;
 }
 
 /* 텍스트 색상 버튼 스타일링 */
 
-.option .text-color-options { /*중복*/
-    display: flex;
-    justify-content: space-between;
+.option .text-color-options {
+  /*중복*/
+  display: flex;
+  justify-content: space-between;
 }
 
 .option .text-color-options .text-color-option {
-    border-radius: 30%;
-    margin-top: 3px;
-    width: 20px;
-    height: 20px;
-    position: relative;
+  border-radius: 30%;
+  margin-top: 3px;
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 
 .text-color-option:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .option .text-color-options .text-color-option.selected::before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    height: 12px;
-    width: 12px;
-    background: inherit;
-    border-radius: inherit;
-    border: 2px solid #fff;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
 }
 
 .text-color-options .text-color-option:nth-child(1) {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .text-color-options .text-color-option:nth-child(2) {
-    background-color: #ff3333;
+  background-color: #ff3333;
 }
 
 .text-color-options .text-color-option:nth-child(3) {
-    background-color: #ffa500;
+  background-color: #ffa500;
 }
 
 .text-color-options .text-color-option:nth-child(4) {
-    background-color: #f0e68c;
+  background-color: #f0e68c;
 }
 
 .text-color-options .text-color-option:nth-child(5) {
-    background-color: #49be2c ;
+  background-color: #49be2c;
 }
 
 .text-color-options .text-color-option:nth-child(6) {
-    background-color: #981ade;
+  background-color: #981ade;
 }
 
 /* brush stroke range slider */
 .option #width-size {
-    height: 5px;
-    margin-top: 10px;
-    accent-color: #ffc0cb;
-    border-radius: 10px;
+  height: 5px;
+  margin-top: 10px;
+  accent-color: #ffc0cb;
+  border-radius: 10px;
 }
 
 .option :where(span) {
-    color: #000;
+  color: #000;
 }
 
 button {
-    background-color: #fff4fE;
-    border: 0px #dcdcdc; 
+  background-color: #fff4fe;
+  border: 0px #dcdcdc;
 }
 
 .drawing-board {
-    flex: 1;
+  flex: 1;
 }
 
-
 /* mobile  */
-@media screen and (max-width: 576px) {
-    .container {
-        display: block;
-        background-color: #F0DFE9;
-    }
+@media screen and (max-width: 768px) {
+  h1 {
+    margin-bottom: 10%;
+  }
+  .container {
+    /* margin-top: 20%; */
+    display: block;
+    background-color: #f0dfe9;
+    box-shadow: 0 0 0;
+  }
 
-    .tools-board {
-        width: 100%;
-        margin-bottom: 1.5rem;
-        border-radius: 55px;
-        justify-content:center;
-        display: flex;
-        padding-left: 0;
-    }
+  .tools-board {
+    width: 100%;
+    margin-bottom: 35%;
+    border-radius: 55px;
+    justify-content: center;
+    display: flex;
+    padding-left: 0;
+  }
 
-    .tools-board .tool {
-        margin: 0;
-        /* display: table-cell; */
-        display: flex;
-    }
+  .tools-board .tool {
+    margin: 0;
+    /* display: table-cell; */
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
 
-    .tools-board .tool .title {
-        /* display: table-cell; */
-        padding-left: 1.7rem;
-        padding-bottom: 0.25rem;
-    }
+  .tools-board .tool .title {
+    /* display: table-cell; */
+    padding-left: 1.7rem;
+    padding-bottom: 0.25rem;
+  }
 
-    .tools-board .tool .title .label {
-        display: none;
-    }
+  .tools-board .tool .title .label {
+    display: none;
+  }
 
-    .tools-board .tool .options {
-        display: none;
-    }
-    
+  .tools-board .tool .options {
+    border-radius: 10px;
+    margin: 0;
+    top: 130%;
+    left: -15%;
+    background-color: #fff4fe;
+    display: none;
+  }
+
+  .tools-board .tool .title.active + .options {
+    position: absolute;
+    display: flex;
+  }
+
+  .options > * {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .color-options {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .drawing-board {
+    display: grid;
+    place-items: center;
+    background-color: #f0dfe9;
+  }
 }

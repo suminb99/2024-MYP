@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
     <title>MYP</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>MYP</h1>
     <div class="container">
-        <div class="filter-menu">
-            <li class="active">All</li>
-            <li>CAT</li>
-            <li>DOG</li>
-            <li>MOUSE</li>
-            <li>MONKEY</li>
-            <li>ETC</li>
+      <div class="filter-menu">
+        <li class="active">All</li>
+        <li>CAT</li>
+        <li>DOG</li>
+        <li>MOUSE</li>
+        <li>MONKEY</li>
+        <li>ETC</li>
+        <li>♡</li>
+      </div>
+      <div class="image-upload-container">
+        <div class="image-drag-area">
+          <div class="icon-box">
+            <i class="icon" data-feather="upload-cloud"></i>
+          </div>
+          <header>이미지 업로드</header>
+          <button>사진 선택</button>
         </div>
-        <div class="templates" id="meme-templates">
-            <!-- 밈 템플릿 -->
-        </div>
-
+      </div>
+      <div class="templates" id="meme-templates">
+        <!-- 밈 템플릿 -->
+      </div>
     </div>
-
     <script type="module" src="home.js"></script>
-</body>
-
+    <script>
+      feather.replace();
+    </script>
+  </body>
 </html>
