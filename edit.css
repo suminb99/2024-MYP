@@ -241,13 +241,12 @@ button {
 @media screen and (max-width: 768px) {
   body {
     margin-top: 20%;
-    margin-bottom: 30%;
+    margin-bottom: 20%;
   }
   h1 {
     margin-bottom: 10%;
   }
   .container {
-    /* margin-top: 20%; */
     display: block;
     background-color: #f0dfe9;
     box-shadow: 0 0 0;
@@ -264,14 +263,12 @@ button {
 
   .tools-board .tool {
     margin: 0;
-    /* display: table-cell; */
     display: flex;
     position: relative;
     justify-content: space-between;
   }
 
   .tools-board .tool .title {
-    /* display: table-cell; */
     padding-left: 1.7rem;
     padding-bottom: 0.25rem;
   }
