@@ -239,6 +239,10 @@ button {
 
 /* mobile  */
 @media screen and (max-width: 768px) {
+  body {
+    margin-top: 20%;
+    margin-bottom: 30%;
+  }
   h1 {
     margin-bottom: 10%;
   }
@@ -277,15 +281,22 @@ button {
   }
 
   .tools-board .tool .options {
+    display: none;
     border-radius: 10px;
     margin: 0;
-    top: 130%;
-    left: -15%;
     background-color: #fff4fe;
-    display: none;
+  }
+
+  .tools-board .tool:nth-child(1) .options {
+    left: -15%;
+  }
+
+  .tools-board .tool:nth-child(2) .options {
+    left: -130%;
   }
 
   .tools-board .tool .title.active + .options {
+    top: 130%;
     position: absolute;
     display: flex;
   }
@@ -297,6 +308,11 @@ button {
   }
 
   .color-options {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .text-color-options {
     display: grid;
     gap: 0.4rem;
   }
