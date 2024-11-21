@@ -3,9 +3,10 @@ const templates = document.getElementById("meme-templates");
 const imageDropArea = document.querySelector(".image-drag-area");
 import memeImages from "./images.js";
 
+let imageId;
 memeImages.forEach(function (meme) {
   console.log(typeof meme);
-  const imageId = meme["img"];
+  imageId = meme["img"];
   const imageClass = meme["class"];
   const imgElement = document.createElement("img");
   imgElement.src = `./assets/images/img${imageId}.jpeg`;
@@ -15,6 +16,7 @@ memeImages.forEach(function (meme) {
   imgElement.classList.add("meme-template");
 
   imgElement.addEventListener("click", function () {
+    console.log("clicked!");
     localStorage.setItem("templateInfo", JSON.stringify(meme));
     window.location.href = "edit.html";
   });
@@ -52,6 +54,7 @@ filterMenu.forEach((filter) => {
 
 // 이미지 업로드 기능
 let file;
+let newImageId = parseInt(imageId) + 1;
 
 imageDropArea.addEventListener("dragover", (event) => {
   event.preventDefault();
@@ -62,13 +65,31 @@ imageDropArea.addEventListener("dragleave", () => {
   imageDropArea.classList.remove("active");
 });
 
-// imageDropArea.addEventListener("drop", (event) => {
-//   event.preventDefault();
-//   file = event.dataTransfer.files[0];
-//   let fileType = file.type;
-//   console.log(fileType);
+imageDropArea.addEventListener("drop", (event) => {
+  event.preventDefault();
+  // 사용자가 선택한 첫번째 파일만 가져오기
+  file = event.dataTransfer.files[0];
+  let fileType = file.type;
 
-//   let validExtension = "image/jpeg";
-//   if (validExtension === fileType) {
-//   }
-// });
+  const newImageIdInStr = String(newImageId++);
+
+  let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+  if (validExtensions.includes(fileType)) {
+    let fileReader = new FileReader();
+    fileReader.onload = () => {
+      let fileURL = fileReader.result;
+      console.log(fileURL);
+      const imgElement = document.createElement("img");
+      imgElement.src = `${fileURL}`;
+      imgElement.alt = `Meme Template ${newImageIdInStr}`;
+      imgElement.setAttribute("data-filter", "dog");
+      imgElement.classList.add("meme-template");
+      templates.appendChild(imgElement);
+      imgElement.style.display = "none";
+      // localStorage.setItem("templateInfo", JSON.stringify(meme));
+    };
+    fileReader.readAsDataURL(file);
+  } else {
+    alert("이미지 파일을 드롭해주세요!");
+  }
+});
