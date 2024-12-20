@@ -1,124 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Kirang+Haerang&family=Nanum+Pen+Script&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="edit.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&family=Kirang+Haerang&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="edit.css" />
     <title>MYP</title>
     <script src="https://unpkg.com/feather-icons"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <h1>MYP</h1>
-        <div class="container">
-            <section class="tools-board">
-                <div class="tool">
-                    <div class="title" id="draw">
-                        <button>
-                            <i data-feather="edit-2"></i>
-                        </button>
-                        <span class="label">드로잉</span>
-                    </div>
-                    <ul class="options">
-                        <li class="option">
-                            <span>크기</span>
-                            <input type="range" id="width-size" max="30" min="0" value="10">
-                        </li>
-                        <li class="option">
-                            <span>색상</span>
-                            <div class="color-options">
-                                <ul class="color-option selected"></ul>
-                                <ul class="color-option"></ul>
-                                <ul class="color-option"></ul>
-                                <ul class="color-option"></ul>
-                                <ul class="color-option"></ul>
-                                <div class="color-option">
-                                    <input type="color" id="stroke-color-picker" value="#afeeee">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+      <h1>PETTORY</h1>
+      <div class="container">
+        <section class="tools-board">
+          <div class="tool">
+            <div class="title" id="draw">
+              <button>
+                <i data-feather="edit-2"></i>
+              </button>
+              <span class="label">드로잉</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <span>크기</span>
+                <input
+                  type="range"
+                  id="width-size"
+                  max="30"
+                  min="0"
+                  value="10"
+                />
+              </li>
+              <li class="option">
+                <span>색상</span>
+                <div class="color-options">
+                  <ul class="color-option selected"></ul>
+                  <ul class="color-option"></ul>
+                  <ul class="color-option"></ul>
+                  <ul class="color-option"></ul>
+                  <ul class="color-option"></ul>
+                  <div class="color-option">
+                    <input
+                      type="color"
+                      id="stroke-color-picker"
+                      value="#afeeee"
+                    />
+                  </div>
                 </div>
-                <div class="tool">
-                    <div class="title" id="text">
-                        <button>
-                            <i data-feather="type"></i>
-                        </button>
-                        <span class="label">텍스트</span>
-                    </div>
-                    <ul class="options">
-                        <li class="option">
-                            <span>글씨</span>
-                            <select id="font-family">
-                                <option value="arial black">arial black</option>
-                                <option value="Georgia">Georgia</option>
-                                <option value="Tahoma">Tahoma</option>
-                                <option value="궁서체">궁서체</option>
-                                <option value="Kirang Haerang">Kirang Haerang</option>
-                                <option value="Jua">Jua</option>
-                                <option value="Nanum Pen Script">Nanum Pen Script</option>
-                            </select>
-                        </li>
-                        <li class="option">
-                            <span>색상</span>
-                            <div class="text-color-options">
-                                <ul class="text-color-option selected"></ul>
-                                <ul class="text-color-option"></ul>
-                                <ul class="text-color-option"></ul>
-                                <ul class="text-color-option"></ul>
-                                <ul class="text-color-option"></ul>
-                                <div class="text-color-option">
-                                    <input type="color" id="text-color-picker" value="#afeeee">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="tool">
+            <div class="title" id="text">
+              <button>
+                <i data-feather="type"></i>
+              </button>
+              <span class="label">텍스트</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <span>글씨</span>
+                <select id="font-family">
+                  <option value="arial black">arial black</option>
+                  <option value="Georgia">Georgia</option>
+                  <option value="Tahoma">Tahoma</option>
+                  <option value="궁서체">궁서체</option>
+                  <option value="Kirang Haerang">Kirang Haerang</option>
+                  <option value="Jua">Jua</option>
+                  <option value="Nanum Pen Script">Nanum Pen Script</option>
+                </select>
+              </li>
+              <li class="option">
+                <span>색상</span>
+                <div class="text-color-options">
+                  <ul class="text-color-option selected"></ul>
+                  <ul class="text-color-option"></ul>
+                  <ul class="text-color-option"></ul>
+                  <ul class="text-color-option"></ul>
+                  <ul class="text-color-option"></ul>
+                  <div class="text-color-option">
+                    <input
+                      type="color"
+                      id="text-color-picker"
+                      value="#afeeee"
+                    />
+                  </div>
                 </div>
-                <div class="tool">
-                    <div class="title" id="bubble">
-                        <button>
-                            <i data-feather="message-circle"></i>
-                        </button>
-                        <span class="label">말풍선</span>
-                    </div>
-                    <div class="title" id="remove">
-                        <button>
-                            <i data-feather="trash"></i>
-                        </button>
-                        <span class="label">삭제</span>
-                    </div>
-                    <div class="title" id="clear">
-                        <button>
-                            <i data-feather="x-circle"></i>
-                        </button>
-                        <span class="label">전체 삭제</span>
-                    </div>
-                    <div class="title" id="download">
-                        <button>
-                            <i data-feather="download"></i>
-                        </button>
-                        <span class="label">저장</span>
-                    </div>
-                </div>
-            </section>
-            <section class="drawing-board" id="canvas-wrapper">
-                <canvas id="canvas"></canvas>
-                <img src="assets/images/bubble.png" id="bubble-image" hidden>
-            </section>
-        </div>
+              </li>
+            </ul>
+          </div>
+          <div class="tool">
+            <div class="title" id="bubble">
+              <button>
+                <i data-feather="message-circle"></i>
+              </button>
+              <span class="label">말풍선</span>
+            </div>
+            <div class="title" id="remove">
+              <button>
+                <i data-feather="trash"></i>
+              </button>
+              <span class="label">삭제</span>
+            </div>
+            <div class="title" id="clear">
+              <button>
+                <i data-feather="x-circle"></i>
+              </button>
+              <span class="label">전체 삭제</span>
+            </div>
+            <div class="title" id="download">
+              <button>
+                <i data-feather="download"></i>
+              </button>
+              <span class="label">저장</span>
+            </div>
+          </div>
+        </section>
+        <section class="drawing-board" id="canvas-wrapper">
+          <canvas id="canvas"></canvas>
+          <img src="assets/images/bubble.png" id="bubble-image" hidden />
+        </section>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
     <script src="edit.js"></script>
     <script>
-        feather.replace();
+      feather.replace();
     </script>
-</body>
-
+  </body>
 </html>

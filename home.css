@@ -80,7 +80,7 @@ h1 {
 }
 
 .image-drag-area.active {
-  border: 2px solid #fec98f;
+  border: 3px solid #fec98f;
 }
 
 .image-drag-area .icon-box {
@@ -109,4 +109,10 @@ h1 {
   color: #fec98f;
   border-radius: 35px;
   cursor: pointer;
+}
+
+.image-drag-area button:hover {
+  background-color: #fec98f;
+  color: #fff6dd;
+  transform: scale(1.03);
 }

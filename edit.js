@@ -30,6 +30,7 @@ if (innerWidth < 576) {
 
 const templateInfo = JSON.parse(localStorage.getItem("templateInfo"));
 console.log(templateInfo);
+
 const imgId = templateInfo["img"];
 const scaleWidth = canvasScreenWidth / templateInfo["width"];
 const scaleHeight = canvasScreenHeight / templateInfo["height"];
@@ -42,7 +43,13 @@ const canvas = new fabric.Canvas("canvas", {
   height: templateInfo["height"] * scaleFactor,
 });
 
-const templateURL = `./assets/images/img${imgId}.jpeg`;
+let templateURL;
+console.log(templateInfo["original"]);
+if (templateInfo["original"]) {
+  templateURL = `./assets/images/img${imgId}.jpeg`;
+} else {
+  templateURL = imgId;
+}
 
 fabric.Image.fromURL(templateURL, function (img) {
   canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
