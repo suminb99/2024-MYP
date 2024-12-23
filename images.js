@@ -177,9 +177,9 @@ const memeImages = [
   {
     img: "27",
     original: true,
-    width: 550,
-    height: 528,
-    class: "dog",
+    width: 557,
+    height: 990,
+    class: "etc",
   },
 ];
 

@@ -18,18 +18,21 @@ const selectedTextColorBtn = document.querySelector(
   ".text-color-options .selected"
 );
 
-let textMode = false;
+const header = document.querySelector("h1");
+
+header.addEventListener("click", () => {
+  console.log("redirect to home page");
+  window.location.href = "index.html";
+});
 
 let canvasScreenWidth = 700,
   canvasScreenHeight = 500;
-console.log(innerWidth);
+
 if (innerWidth < 576) {
   canvasScreenWidth = 350;
-  canvasScreenHeight = 500;
 }
 
 const templateInfo = JSON.parse(localStorage.getItem("templateInfo"));
-console.log(templateInfo);
 
 const imgId = templateInfo["img"];
 const scaleWidth = canvasScreenWidth / templateInfo["width"];
@@ -37,14 +40,12 @@ const scaleHeight = canvasScreenHeight / templateInfo["height"];
 const scaleFactor = Math.min(scaleWidth, scaleHeight);
 
 const canvas = new fabric.Canvas("canvas", {
-  // id we use in the template
   isDrawingMode: false,
   width: templateInfo["width"] * scaleFactor,
   height: templateInfo["height"] * scaleFactor,
 });
 
 let templateURL;
-console.log(templateInfo["original"]);
 if (templateInfo["original"]) {
   templateURL = `./assets/images/img${imgId}.jpeg`;
 } else {
@@ -110,6 +111,8 @@ strokeWidth.onchange = function () {
 };
 
 // 텍스트 섹션
+let textMode = false;
+
 text.addEventListener("click", function () {
   deactivateDrawingMode();
   console.log("text mode activated!");
@@ -152,7 +155,7 @@ textColorBtns.forEach((btn) => {
   });
 });
 
-// 텍스트 color-picker 버튼 색상 맞춰서 변경
+// color-picker 색상 맞춰서 텍스트 색상 변경
 textColorPicker.addEventListener("change", () => {
   textColorPicker.parentElement.style.background = textColorPicker.value;
   textColorPicker.parentElement.click();
@@ -198,15 +201,13 @@ clear.addEventListener("click", function () {
 save.addEventListener("click", function () {
   deactivateDrawingMode();
   deactivateTextMode();
+
   let canvasURL = canvas.toDataURL("image/png", 1);
-  console.log(canvasURL);
-  const createEl = document.createElement("a");
-  createEl.href = canvasURL;
-
-  createEl.download = "canvasImg.png";
-
-  createEl.click();
-  createEl.remove();
+  const link = document.createElement("a");
+  link.href = canvasURL;
+  link.download = "img.png";
+  link.click();
+  link.remove();
 });
 
 // 드로잉 모드 해제

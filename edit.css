@@ -36,6 +36,8 @@ h1 {
   text-align: center;
   font-size: 350%;
   color: #89cff0;
+  margin-bottom: 4%;
+  cursor: pointer;
 }
 
 .container {
@@ -235,6 +237,7 @@ button {
 
 .drawing-board {
   flex: 1;
+  background-color: #ffe6ee;
 }
 
 /* mobile  */

@@ -8,13 +8,11 @@ import memeImages from "./images.js";
 
 let imageId;
 memeImages.forEach(function (meme) {
-  console.log(meme);
-  console.log(typeof meme);
   imageId = meme["img"];
   const imageClass = meme["class"];
   const imgElement = document.createElement("img");
   imgElement.src = `./assets/images/img${imageId}.jpeg`;
-  imgElement.alt = `Meme Template ${imageId}`;
+  imgElement.alt = `MemeTemplate${imageId}`;
   imgElement.setAttribute("data-filter", `${imageClass}`);
 
   imgElement.classList.add("meme-template");
@@ -83,16 +81,17 @@ imageDropArea.addEventListener("drop", (event) => {
   // 사용자가 선택한 첫번째 파일만 가져오기
   file = event.dataTransfer.files[0];
   loadImage();
+  imageDropArea.classList.remove("active");
 });
 
 function loadImage() {
   let fileType = file.type;
   let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+
   if (validExtensions.includes(fileType)) {
     let fileReader = new FileReader();
     fileReader.onload = () => {
       let fileURL = fileReader.result;
-      //console.log(fileURL);
       const imgElement = document.createElement("img");
       imgElement.src = fileURL;
 
@@ -118,6 +117,6 @@ function loadImage() {
     };
     fileReader.readAsDataURL(file);
   } else {
-    alert("이미지 파일을 드롭해주세요!");
+    alert("이미지 파일을 선택해 주세요!");
   }
 }
