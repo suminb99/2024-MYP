@@ -80,7 +80,7 @@ const memeImages = [
     img: "12",
     original: true,
     width: 736,
-    height: 736,
+    height: 728,
     class: "dog",
   },
   {

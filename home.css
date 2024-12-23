@@ -96,11 +96,12 @@ h1 {
 }
 
 .image-drag-area header {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   color: #fec98f;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .image-drag-area button {
