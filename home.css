@@ -76,7 +76,7 @@ h1 {
   height: 400px;
   width: 600px;
   border-radius: 10px;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;

@@ -25,7 +25,6 @@ memeImages.forEach(function (meme) {
 
   templates.appendChild(imgElement);
   imgElement.style.display = "none";
-  imageDropArea.style.display = "flex";
 });
 
 // 필터 기능
