@@ -99,7 +99,8 @@ h1 {
   font-size: 30px;
   font-weight: 500;
   color: #fec98f;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .image-drag-area button {

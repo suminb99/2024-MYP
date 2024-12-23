@@ -24,16 +24,21 @@ memeImages.forEach(function (meme) {
   });
 
   templates.appendChild(imgElement);
+  imgElement.style.display = "none";
+  imageDropArea.style.display = "flex";
 });
 
 // 필터 기능
+
 filterMenu.forEach((filter) => {
   filter.addEventListener("click", () => {
     document.querySelector(".filter-menu li.active").classList.remove("active");
-    imageDropArea.style.display = "none";
     filter.classList.add("active");
+
     if (filter.innerHTML === "♡") {
       imageDropArea.style.display = "flex";
+    } else {
+      imageDropArea.style.display = "none";
     }
 
     const activeClass = filter.innerHTML.toLowerCase();
