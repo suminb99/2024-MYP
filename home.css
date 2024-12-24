@@ -3,8 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #fff6dd;
   font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff6dd;
 }
 
 h1 {
@@ -14,7 +17,9 @@ h1 {
   font-size: 350%;
   color: #89cff0;
 }
+
 .container {
+  min-height: 100%;
   width: 80vw;
   margin: 2rem auto;
   padding-bottom: 10%;
@@ -114,10 +119,28 @@ h1 {
   color: #fec98f;
   border-radius: 35px;
   cursor: pointer;
+  background-color: #fff6dd;
 }
 
 .image-drag-area button:hover {
   background-color: #fec98f;
   color: #fff6dd;
   transform: scale(1.03);
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  background-color: #fec98f !important;
+  margin-top: 5rem;
+  text-align: center;
+  color: #fff6dd;
+}
+
+p {
+  padding: 20px;
+}
+
+contact {
+  text-decoration: underline;
 }
