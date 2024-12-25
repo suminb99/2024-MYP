@@ -53,6 +53,7 @@ h1 {
 }
 
 .templates {
+  padding-bottom: 10%;
   columns: 4 12rem;
   gap: 1rem;
 }
@@ -131,7 +132,7 @@ h1 {
 .footer {
   position: relative;
   bottom: 0;
-  background-color: #fec98f !important;
+  background-color: #fec98f;
   margin-top: 5rem;
   text-align: center;
   color: #fff6dd;
